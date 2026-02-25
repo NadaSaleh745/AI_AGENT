@@ -62,13 +62,8 @@ while True:
         if rows:
             explanation_prompt = f"""
                 User question: {user_input}
-    
-                SQL query executed:
-                {sql_query}
-    
-                SQL result rows:
-                {rows}
-    
+                SQL query executed: {sql_query}
+                SQL result rows: {rows}
                 Explain these results clearly in a friendly human-readable way.
                 """
 
