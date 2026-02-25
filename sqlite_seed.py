@@ -3,7 +3,7 @@ import sqlite3
 from datetime import date
 
 
-DB_PATH = "../erp_demo.db"
+DB_PATH = "erp_demo.db"
 
 
 SCHEMA_SQL = """
