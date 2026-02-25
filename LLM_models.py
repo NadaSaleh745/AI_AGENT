@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from sqlite_seed import SCHEMA_SQL
 
 # DATABASE CONNECTION
-conn = sqlite3.connect("/AI_AGENT/erp_demo.db")
+conn = sqlite3.connect("/AI_AGENT/erp_database.db")
 cursor = conn.cursor()
 
 # LOADING API KEY FROM .env FILE
