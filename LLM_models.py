@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from sqlite_seed import SCHEMA_SQL
 
 # DATABASE CONNECTION
-conn = sqlite3.connect("/AI_AGENT/erp_database.db")
+conn = sqlite3.connect("/Users/nada/PycharmProjects/AI_AGENTS_PROJECT/AI_AGENT/erp_database.db")
 cursor = conn.cursor()
 
 # LOADING API KEY FROM .env FILE
@@ -45,6 +45,10 @@ retrieval_chat = retrieval_model.start_chat()
 
 while True:
     user_input = input("You: ")
+    # IF USER PRESSES ENTER WITHOUT PROVIDING AN INPUT
+    if not user_input.strip():
+        print("Please enter a valid question.")
+        continue
     response = retrieval_chat.send_message(user_input)
     # FORMING THE SQL QUERY, NO ACTIONS TAKEN YET
     sql_query = response.text.strip()
@@ -78,7 +82,3 @@ while True:
 
     except Exception as e:
         print("SQL Error:", e)
-
-
-
-
